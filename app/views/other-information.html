@@ -26,11 +26,11 @@
             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
       {{ govukCheckboxes({
-        idPrefix: "other-benefits",
-        name: "other-benefits",
+        idPrefix: "other-information",
+        name: "other-information",
         fieldset: {
           legend: {
-            text: "Other benefits",
+            text: "Other information",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--l"
           }
@@ -40,12 +40,8 @@
         },
         items: [
           {
-            value: "benefits-names",
-            text: "Name of other benefits"
-          },
-          {
-            value: "benefits-other-ref-number",
-            text: "Other benefit reference number"
+            value: "other-information",
+            text: "Other information"
           }
         ]
       }) }}

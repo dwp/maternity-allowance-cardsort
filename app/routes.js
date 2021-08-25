@@ -39,4 +39,8 @@ router.post('/other-benefits', function (req, res) {
   res.redirect('payment-details');
 });
 
+router.post('/payment-details', function (req, res) {
+  res.redirect('other-information');
+});
+
 module.exports = router
