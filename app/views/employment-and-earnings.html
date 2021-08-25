@@ -1,0 +1,115 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Title
+      </h1>
+      <p>
+        Scenario blurb
+      </p>
+
+      <p>
+        Explanation blurb
+      </p>
+
+
+            <form class="form" method="post" novalidate>
+              Name of employer
+              Address of employer
+              Employer phone number
+              Date employment started
+              Date employed stopped
+              Payroll, employee, clock or works number
+              Pay day frequency
+              Date last worked
+              Sick pay after stopping work
+              Dates sick pay received
+              Reason for sickness
+              Maternity leave start date
+              MA start date
+
+              {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "employment-and-earnings",
+          name: "employment-and-earnings",
+          fieldset: {
+            legend: {
+              text: "Employment and earnings",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "surname",
+              text: "Surname"
+            },
+            {
+              value: "other-names",
+              text: "Other names"
+            },
+            {
+              value: "other-surnames",
+              text: "Any other surnames known by"
+            },
+            {
+              value: "dob",
+              text: "Date of birth"
+            },
+            {
+              value: "nino",
+              text: "National Insurance Number (NINO)"
+            },
+            {
+              value: "previous-addresses",
+              text: "Previous 3 years addresses"
+            },
+            {
+              value: "home-phone",
+              text: "Home Phone Number"
+            },
+            {
+              value: "mobile-phone",
+              text: "Mobile Phone Number"
+            },
+            {
+              value: "email-address",
+              text: "Email address"
+            },
+            {
+              value: "due-date",
+              text: "Due date"
+            },
+            {
+              value: "baby-dob",
+              text: "Baby date of birth"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
