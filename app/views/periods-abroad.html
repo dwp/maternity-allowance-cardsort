@@ -1,0 +1,118 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Title
+      </h1>
+      <p>
+        Scenario blurb
+      </p>
+
+      <p>
+        Explanation blurb
+      </p>
+
+
+            <form class="form" method="post" novalidate>
+              
+              {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "periods-abroad",
+          name: "periods-abroad",
+          fieldset: {
+            legend: {
+              text: "Periods abroad",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "abroad-time-during-test-period",
+              text: "Time abroad in test period"
+            },
+            {
+              value: "abroad-employed-overseas-employer",
+              text: "Employed abroad by overseas employer"
+            },
+            {
+              value: "abroad-employed-overseas-uk-employer",
+              text: "Employed abroad by a UK employer"
+            },
+            {
+              value: "abroad-self-employed",
+              text: "Self-employed abroad"
+            },
+            {
+              value: "abroad-activities-abroad-spouses-uk-business",
+              text: "Taking part from abroad in activities related to the UK business of spouse"
+            },
+            {
+              value: "abroad-service-family",
+              text: "A member of a service family abroad"
+            },
+            {
+              value: "abroad-benefits-in-foreign-country",
+              text: "Receiving any benefits in a foreign country"
+            },
+            {
+              value: "abroad-countries",
+              text: "Which countries did you spend time in"
+            },
+            {
+              value: "abroad-foreign-ni",
+              text: "Periods foreign NI paid"
+            },
+            {
+              value: "abroad-employer-name-address",
+              text: "Name and address of employer (abroad)"
+            },
+            {
+              value: "abroad-employer-phone",
+              text: "Employer phone number (abroad)"
+            },
+            {
+              value: "abroad-employment-date-start",
+              text: "Date employment started (abroad)"
+            },
+            {
+              value: "abroad-employment-date-stop",
+              text: "Date employment stopped (abroad)"
+            },
+            {
+              value: "abroad-employment-number",
+              text: "Payroll, employee, clock or works number (abroad)"
+            },
+            {
+              value: "abroad-employment-pay-frequency",
+              text: "Payment frequency (abroad)"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

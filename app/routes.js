@@ -19,4 +19,24 @@ router.post('/employment-and-earnings', function (req, res) {
   res.redirect('agency-workers');
 });
 
+router.post('/agency-workers', function (req, res) {
+  res.redirect('self-employed');
+});
+
+router.post('/self-employed', function (req, res) {
+  res.redirect('participating-spouse');
+});
+
+router.post('/participating-spouse', function (req, res) {
+  res.redirect('periods-abroad');
+});
+
+router.post('/periods-abroad', function (req, res) {
+  res.redirect('other-benefits');
+});
+
+router.post('/other-benefits', function (req, res) {
+  res.redirect('payment-details');
+});
+
 module.exports = router

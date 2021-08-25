@@ -1,0 +1,78 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Title
+      </h1>
+      <p>
+        Scenario blurb
+      </p>
+
+      <p>
+        Explanation blurb
+      </p>
+
+
+            <form class="form" method="post" novalidate>
+
+              {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "self-employed",
+          name: "self-employed",
+          fieldset: {
+            legend: {
+              text: "Self employed",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "se-date-registered",
+              text: "Date registered as self-employed"
+            },
+            {
+              value: "se-still-employed",
+              text: "Still self-employed?"
+            },
+            {
+              value: "se-date-ended",
+              text: "Date self-employment ended"
+            },
+            {
+              value: "se-date-stopped-for-baby",
+              text: "Date stopped work to have baby"
+            },
+            {
+              value: "se-date-ma",
+              text: "What date do you want us to pay MA from?"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

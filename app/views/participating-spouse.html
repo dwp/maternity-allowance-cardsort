@@ -1,0 +1,151 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Title
+      </h1>
+      <p>
+        Scenario blurb
+      </p>
+
+      <p>
+        Explanation blurb
+      </p>
+
+
+            <form class="form" method="post" novalidate>
+
+
+              {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "participating-spouse",
+          name: "participating-spouse",
+          fieldset: {
+            legend: {
+              text: "Participating spouse",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "ps-date-started",
+              text: "Date started taking part in activities"
+            },
+            {
+              value: "ps-stopped",
+              text: "Stopped taking part in activities?"
+            },
+            {
+              value: "ps-date-stopped",
+              text: "Date stopped taking part in activities"
+            },
+            {
+              value: "ps-stopped-for-pregnancy",
+              text: "Stopped taking part due to pregnancy"
+            },
+            {
+              value: "ps-stopped-for-sickness",
+              text: "Stopped taking part due to sickness"
+            },
+            {
+              value: "ps-stopped-for-pregnancy-sickness",
+              text: "Stopped taking part due to pregnancy-related sickness"
+            },
+            {
+              value: "ps-date-planning-to-stop",
+              text: "Date planning to stop taking part in activities"
+            },
+            {
+              value: "ps-duties",
+              text: "Duties or activities performed"
+            },
+            {
+              value: "ps-dates-activities",
+              text: "Dates taking part in activities"
+            },
+            {
+              value: "ps-spouse-nino",
+              text: "Spouse NINO"
+            },
+            {
+              value: "ps-spouse-surname",
+              text: "Spouse surname"
+            },
+            {
+              value: "ps-spouse-other-names",
+              text: "Spouse other names"
+            },
+            {
+              value: "ps-spouse-address",
+              text: "Spouse address"
+            },
+            {
+              value: "ps-date-relationship",
+              text: "Date of marriage/civil partnership"
+            },
+            {
+              value: "ps-country-of-marriage-partnership",
+              text: "Country of marriage"
+            },
+            {
+              value: "ps-relationship-ended",
+              text: "Divorced or dissolved"
+            },
+            {
+              value: "ps-date-spouse-employed",
+              text: "Date spouse became self-employed"
+            },
+            {
+              value: "ps-spouse-hmrc-registered",
+              text: "Is spouse registered as self-employed with HMRC"
+            },
+            {
+              value: "ps-date-hmrc-registration",
+              text: "End date of HMRC registration - spouse"
+            },
+            {
+              value: "ps-name-spouse-business-address",
+              text: "Full name and address of spouse business"
+            },
+            {
+              value: "ps-spouse-business-website",
+              text: "Website of spouse business"
+            },
+            {
+              value: "ps-spouse-business-nature",
+              text: "Nature of spouse business"
+            },
+            {
+              value: "ps-spouse-contact",
+              text: "Can we contact spouse"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
