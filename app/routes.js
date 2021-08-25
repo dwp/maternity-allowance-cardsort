@@ -3,6 +3,10 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
+router.post('/', function (req, res) {
+  res.redirect('about-you');
+});
+
 router.post('/about-you', function (req, res) {
   res.redirect('work');
 });
