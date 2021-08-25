@@ -15,4 +15,8 @@ router.post('/test-period', function (req, res) {
   res.redirect('employment-and-earnings');
 });
 
+router.post('/employment-and-earnings', function (req, res) {
+  res.redirect('agency-workers');
+});
+
 module.exports = router
