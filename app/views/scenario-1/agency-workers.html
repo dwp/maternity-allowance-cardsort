@@ -10,29 +10,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Title
-      </h1>
-      <p>
-        Scenario blurb
-      </p>
-
-      <p>
-        Explanation blurb
-      </p>
-
-
             <form class="form" method="post" novalidate>
 
 
               {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          idPrefix: "about-you",
-          name: "about-you",
+          idPrefix: "agency-workers",
+          name: "agency-workers",
           fieldset: {
             legend: {
-              text: "About you",
-              isPageHeading: false,
+              text: "Agency workers",
+              isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
@@ -41,48 +30,48 @@
           },
           items: [
             {
-              value: "surname",
-              text: "Surname"
+              value: "agency-worker-test-period",
+              text: "Agency worker during test period"
             },
             {
-              value: "other-names",
-              text: "Other names"
+              value: "agency-name",
+              text: "Name of agency"
             },
             {
-              value: "other-surnames",
-              text: "Any other surnames known by"
+              value: "agency-address",
+              text: "Address of agency"
             },
             {
-              value: "dob",
-              text: "Date of birth"
+              value: "agency-phone",
+              text: "Phone number of agency "
             },
             {
-              value: "nino",
-              text: "National Insurance Number (NINO)"
+              value: "agency-dates-test-period",
+              text: "Agency work dates during test period"
             },
             {
-              value: "previous-addresses",
-              text: "Previous 3 years addresses"
+              value: "agency-sick-pay",
+              text: "Sick pay after stopping work"
             },
             {
-              value: "home-phone",
-              text: "Home Phone Number"
+              value: "agency-dates-sick-pay",
+              text: "Dates sick pay received"
             },
             {
-              value: "mobile-phone",
-              text: "Mobile Phone Number"
+              value: "agency-sickness-reason",
+              text: "Reason for sickness"
             },
             {
-              value: "email-address",
-              text: "Email address"
+              value: "agency-stopped-work-for-baby",
+              text: "Stopped work to have baby"
             },
             {
-              value: "due-date",
-              text: "Due date"
+              value: "agency-date-stopped-work",
+              text: "Date stopped work to have baby"
             },
             {
-              value: "baby-dob",
-              text: "Baby date of birth"
+              value: "agency-ma-start-date",
+              text: "MA start date"
             }
           ]
         }) }}
@@ -93,7 +82,7 @@
           text: "Save and continue"
         }) }}
 
-    
+
 
       </form>
 

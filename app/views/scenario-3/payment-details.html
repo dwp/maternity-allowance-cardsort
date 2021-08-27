@@ -1,0 +1,77 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+
+            <form class="form" method="post" novalidate>
+
+
+              {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "payment-details",
+          name: "payment-details",
+          fieldset: {
+            legend: {
+              text: "Payment details",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "payments-frequency",
+              text: "MA payment frequency"
+            },
+            {
+              value: "payments-account-name",
+              text: "Account holder name"
+            },
+            {
+              value: "payments-account-name-bank",
+              text: "Full name of bank or building society"
+            },
+            {
+              value: "payment-account-sort-code",
+              text: "Sort code"
+            },
+            {
+              value: "payment-account-number",
+              text: "Account number"
+            },
+            {
+              value: "payment-building-socieety-number",
+              text: "Building society roll or reference number"
+            },
+            {
+              value: "payments-other-benefits",
+              text: "Other benefits paid into same account "
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

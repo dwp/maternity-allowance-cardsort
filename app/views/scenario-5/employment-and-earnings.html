@@ -1,0 +1,99 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+            <form class="form" method="post" novalidate>
+
+              {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "employment-and-earnings",
+          name: "employment-and-earnings",
+          fieldset: {
+            legend: {
+              text: "Employment and earnings",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "employment-employer",
+              text: "Name of employer"
+            },
+            {
+              value: "employment-address",
+              text: "Address of employer"
+            },
+            {
+              value: "employment-phone",
+              text: "Employer phone number"
+            },
+            {
+              value: "employment-date-start",
+              text: "Date employment started"
+            },
+            {
+              value: "employment-date-stop",
+              text: "Date employed stopped"
+            },
+            {
+              value: "employment-number",
+              text: "Payroll, employee, clock or works number"
+            },
+            {
+              value: "employment-payday-frequency",
+              text: "Pay day frequency"
+            },
+            {
+              value: "employment-dlw",
+              text: "Date last worked"
+            },
+            {
+              value: "employment-sick-pay",
+              text: "Sick pay after stopping work"
+            },
+            {
+              value: "employment-date-sick-pay",
+              text: "Dates sick pay received"
+            },
+            {
+              value: "employment-sickness-reason",
+              text: "Reason for sickness"
+            },
+            {
+              value: "employment-ml-date-start",
+              text: "Maternity leave start date"
+            },
+            {
+              value: "employment-ma-date-start",
+              text: "MA start date"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

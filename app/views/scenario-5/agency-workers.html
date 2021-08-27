@@ -1,0 +1,92 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+            <form class="form" method="post" novalidate>
+
+
+              {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "agency-workers",
+          name: "agency-workers",
+          fieldset: {
+            legend: {
+              text: "Agency workers",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "agency-worker-test-period",
+              text: "Agency worker during test period"
+            },
+            {
+              value: "agency-name",
+              text: "Name of agency"
+            },
+            {
+              value: "agency-address",
+              text: "Address of agency"
+            },
+            {
+              value: "agency-phone",
+              text: "Phone number of agency "
+            },
+            {
+              value: "agency-dates-test-period",
+              text: "Agency work dates during test period"
+            },
+            {
+              value: "agency-sick-pay",
+              text: "Sick pay after stopping work"
+            },
+            {
+              value: "agency-dates-sick-pay",
+              text: "Dates sick pay received"
+            },
+            {
+              value: "agency-sickness-reason",
+              text: "Reason for sickness"
+            },
+            {
+              value: "agency-stopped-work-for-baby",
+              text: "Stopped work to have baby"
+            },
+            {
+              value: "agency-date-stopped-work",
+              text: "Date stopped work to have baby"
+            },
+            {
+              value: "agency-ma-start-date",
+              text: "MA start date"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

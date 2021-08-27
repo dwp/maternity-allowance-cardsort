@@ -1,0 +1,63 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+
+                  <form class="form" method="post" novalidate>
+
+
+            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "work",
+        name: "work",
+        fieldset: {
+          legend: {
+            text: "Work",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select all that apply."
+        },
+        items: [
+          {
+            value: "start-15",
+            text: "Start of 15th week before due date"
+          },
+          {
+            value: "employed-15",
+            text: "Employed during 15th week"
+          },
+          {
+            value: "smp",
+            text: "Can they get SMP?"
+          },
+          {
+            value: "reason-no-smp",
+            text: "Reason no SMP"
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+            </form>
+
+    </div>
+  </div>
+
+{% endblock %}

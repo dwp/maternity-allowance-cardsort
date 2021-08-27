@@ -10,24 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Title
-      </h1>
-      <p>
-        Scenario blurb
-      </p>
-
-      <p>
-        Explanation blurb
-      </p>
-
-
             <form class="form" method="post" novalidate>
-
-
-
-
-
-
 
 
 
@@ -35,12 +18,12 @@
               {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          idPrefix: "payment-details",
-          name: "payment-details",
+          idPrefix: "test-period",
+          name: "test-period",
           fieldset: {
             legend: {
-              text: "Payment details",
-              isPageHeading: false,
+              text: "Test period",
+              isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
@@ -49,32 +32,32 @@
           },
           items: [
             {
-              value: "payments-frequency",
-              text: "MA payment frequency"
+              value: "week-baby-due",
+              text: "Week that includes date baby expected"
             },
             {
-              value: "payments-account-name",
-              text: "Account holder name"
+              value: "test-period-first-day",
+              text: "First day of test period"
             },
             {
-              value: "payments-account-name-bank",
-              text: "Full name of bank or building society"
+              value: "test-period-last-day",
+              text: "Last day of test period"
             },
             {
-              value: "payment-account-sort-code",
-              text: "Sort code"
+              value: "test-period-employed",
+              text: "Employed during test period"
             },
             {
-              value: "payment-account-number",
-              text: "Account number"
+              value: "test-period-self-employed",
+              text: "Self-employed during test period"
             },
             {
-              value: "payment-building-socieety-number",
-              text: "Building society roll or reference number"
+              value: "test-period-participating-spouse",
+              text: "Taking part in activities related to spouse SE business during test period"
             },
             {
-              value: "payments-other-benefits",
-              text: "Other benefits paid into same account "
+              value: "test-period-agency-worker",
+              text: "Agency worker during test period"
             }
           ]
         }) }}

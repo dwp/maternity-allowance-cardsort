@@ -10,29 +10,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Title
-      </h1>
-      <p>
-        Scenario blurb
-      </p>
-
-      <p>
-        Explanation blurb
-      </p>
-
-
             <form class="form" method="post" novalidate>
-
 
               {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          idPrefix: "agency-workers",
-          name: "agency-workers",
+          idPrefix: "employment-and-earnings",
+          name: "employment-and-earnings",
           fieldset: {
             legend: {
-              text: "Agency workers",
-              isPageHeading: false,
+              text: "Employment and earnings",
+              isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
@@ -41,47 +29,55 @@
           },
           items: [
             {
-              value: "agency-worker-test-period",
-              text: "Agency worker during test period"
+              value: "employment-employer",
+              text: "Name of employer"
             },
             {
-              value: "agency-name",
-              text: "Name of agency"
+              value: "employment-address",
+              text: "Address of employer"
             },
             {
-              value: "agency-address",
-              text: "Address of agency"
+              value: "employment-phone",
+              text: "Employer phone number"
             },
             {
-              value: "agency-phone",
-              text: "Phone number of agency "
+              value: "employment-date-start",
+              text: "Date employment started"
             },
             {
-              value: "agency-dates-test-period",
-              text: "Agency work dates during test period"
+              value: "employment-date-stop",
+              text: "Date employed stopped"
             },
             {
-              value: "agency-sick-pay",
+              value: "employment-number",
+              text: "Payroll, employee, clock or works number"
+            },
+            {
+              value: "employment-payday-frequency",
+              text: "Pay day frequency"
+            },
+            {
+              value: "employment-dlw",
+              text: "Date last worked"
+            },
+            {
+              value: "employment-sick-pay",
               text: "Sick pay after stopping work"
             },
             {
-              value: "agency-dates-sick-pay",
+              value: "employment-date-sick-pay",
               text: "Dates sick pay received"
             },
             {
-              value: "agency-sickness-reason",
+              value: "employment-sickness-reason",
               text: "Reason for sickness"
             },
             {
-              value: "agency-stopped-work-for-baby",
-              text: "Stopped work to have baby"
+              value: "employment-ml-date-start",
+              text: "Maternity leave start date"
             },
             {
-              value: "agency-date-stopped-work",
-              text: "Date stopped work to have baby"
-            },
-            {
-              value: "agency-ma-start-date",
+              value: "employment-ma-date-start",
               text: "MA start date"
             }
           ]

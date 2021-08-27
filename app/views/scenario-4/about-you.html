@@ -1,0 +1,92 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+            <form class="form" method="post" novalidate>
+
+
+              {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "about-you",
+          name: "about-you",
+          fieldset: {
+            legend: {
+              text: "About you",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "surname",
+              text: "Surname"
+            },
+            {
+              value: "other-names",
+              text: "Other names"
+            },
+            {
+              value: "other-surnames",
+              text: "Any other surnames known by"
+            },
+            {
+              value: "dob",
+              text: "Date of birth"
+            },
+            {
+              value: "nino",
+              text: "National Insurance Number (NINO)"
+            },
+            {
+              value: "previous-addresses",
+              text: "Previous 3 years addresses"
+            },
+            {
+              value: "home-phone",
+              text: "Home Phone Number"
+            },
+            {
+              value: "mobile-phone",
+              text: "Mobile Phone Number"
+            },
+            {
+              value: "email-address",
+              text: "Email address"
+            },
+            {
+              value: "due-date",
+              text: "Due date"
+            },
+            {
+              value: "baby-dob",
+              text: "Baby date of birth"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+                  <form class="form" method="post" novalidate>
+
+            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "other-information",
+        name: "other-information",
+        fieldset: {
+          legend: {
+            text: "Other information",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select all that apply."
+        },
+        items: [
+          {
+            value: "other-information",
+            text: "Other information"
+          }
+        ]
+      }) }}
+
+            </form>
+
+    </div>
+  </div>
+
+{% endblock %}

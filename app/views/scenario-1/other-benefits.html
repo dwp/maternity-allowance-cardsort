@@ -10,29 +10,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Title
-      </h1>
-      <p>
-        Scenario blurb
-      </p>
-
-      <p>
-        Explanation blurb
-      </p>
-
-
                   <form class="form" method="post" novalidate>
-
 
             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
       {{ govukCheckboxes({
-        idPrefix: "work",
-        name: "work",
+        idPrefix: "other-benefits",
+        name: "other-benefits",
         fieldset: {
           legend: {
-            text: "Work",
-            isPageHeading: false,
+            text: "Other benefits",
+            isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
         },
@@ -41,20 +29,12 @@
         },
         items: [
           {
-            value: "start-15",
-            text: "Start of 15th week before due date"
+            value: "benefits-names",
+            text: "Name of other benefits"
           },
           {
-            value: "employed-15",
-            text: "Employed during 15th week"
-          },
-          {
-            value: "smp",
-            text: "Can they get SMP?"
-          },
-          {
-            value: "reason-no-smp",
-            text: "Reason no SMP"
+            value: "benefits-other-ref-number",
+            text: "Other benefit reference number"
           }
         ]
       }) }}

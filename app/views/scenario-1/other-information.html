@@ -10,28 +10,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Title
-      </h1>
-      <p>
-        Scenario blurb
-      </p>
-
-      <p>
-        Explanation blurb
-      </p>
-
-
                   <form class="form" method="post" novalidate>
 
             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
       {{ govukCheckboxes({
-        idPrefix: "other-benefits",
-        name: "other-benefits",
+        idPrefix: "other-information",
+        name: "other-information",
         fieldset: {
           legend: {
-            text: "Other benefits",
-            isPageHeading: false,
+            text: "Other information",
+            isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
         },
@@ -40,23 +29,12 @@
         },
         items: [
           {
-            value: "benefits-names",
-            text: "Name of other benefits"
-          },
-          {
-            value: "benefits-other-ref-number",
-            text: "Other benefit reference number"
+            value: "other-information",
+            text: "Other information"
           }
         ]
       }) }}
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-
-      {{ govukButton({
-        text: "Save and continue"
-      }) }}
-
-            </form>
+      </form>
 
     </div>
   </div>

@@ -1,0 +1,78 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+            <form class="form" method="post" novalidate>
+
+
+
+
+              {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "test-period",
+          name: "test-period",
+          fieldset: {
+            legend: {
+              text: "Test period",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "week-baby-due",
+              text: "Week that includes date baby expected"
+            },
+            {
+              value: "test-period-first-day",
+              text: "First day of test period"
+            },
+            {
+              value: "test-period-last-day",
+              text: "Last day of test period"
+            },
+            {
+              value: "test-period-employed",
+              text: "Employed during test period"
+            },
+            {
+              value: "test-period-self-employed",
+              text: "Self-employed during test period"
+            },
+            {
+              value: "test-period-participating-spouse",
+              text: "Taking part in activities related to spouse SE business during test period"
+            },
+            {
+              value: "test-period-agency-worker",
+              text: "Agency worker during test period"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
