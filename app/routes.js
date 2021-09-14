@@ -62,12 +62,12 @@ router.post('/scenario-1/test-period', function (req, res) {
 });
 
 router.post('/scenario-1/employment-and-earnings', function (req, res) {
-  res.redirect('agency-workers');
-});
-
-router.post('/scenario-1/agency-workers', function (req, res) {
   res.redirect('periods-abroad');
 });
+
+//router.post('/scenario-1/agency-workers', function (req, res) {
+//  res.redirect('periods-abroad');
+//});
 
 router.post('/scenario-1/periods-abroad', function (req, res) {
   res.redirect('other-benefits');
@@ -126,12 +126,12 @@ router.post('/scenario-4/test-period', function (req, res) {
 });
 
 router.post('/scenario-4/employment-and-earnings', function (req, res) {
-  res.redirect('agency-workers');
-});
-
-router.post('/scenario-4/agency-workers', function (req, res) {
   res.redirect('self-employed');
 });
+
+//router.post('/scenario-4/agency-workers', function (req, res) {
+//  res.redirect('self-employed');
+//});
 
 router.post('/scenario-4/self-employed', function (req, res) {
   res.redirect('periods-abroad');
